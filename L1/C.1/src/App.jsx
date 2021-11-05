@@ -1,23 +1,31 @@
-import React, { useState } from 'react';
-import Clock from './Clock.jsx';
+import React from 'react';
+import ThemedButton from './ThemedButton.jsx';
+import { themes, ThemesContext } from './themes.js';
 
-const Page = () => {
-  const [status, setStatus] = useState(true);
+class App extends React.Component {
+  state = {
+    theme: themes.light,
+  };
 
-  return (
-    <>
-      {status && (
-        <>
-          <Clock location='New York' offset={-5} />
-          <Clock location='Kyiv' offset={2} />
-          <Clock location='London' offset={0} />
-        </>
-      )}
-      <button className='button' onClick={() => setStatus(!status)}>
-        Toggle
-      </button>
-    </>
-  );
-};
+  toggleTheme = () => {
+    const newTheme =
+      this.state.theme === themes.light ? themes.dark : themes.light;
 
-export default Page;
+    this.setState({
+      theme: newTheme,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <ThemesContext.Provider value={this.state.theme}>
+          <ThemedButton onClick={this.toggleTheme}>Dynamic Theme</ThemedButton>
+        </ThemesContext.Provider>
+        <ThemedButton onClick={this.toggleTheme}>Default Theme</ThemedButton>
+      </div>
+    );
+  }
+}
+
+export default App;
