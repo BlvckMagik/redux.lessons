@@ -15,12 +15,6 @@ export const decrement = () => {
   };
 };
 
-export const reset = () => {
-  return {
-    type: RESET,
-  };
-};
-
 export const counterReduser = (state = 0, action) => {
   switch (action.type) {
     case INCREMENT:
