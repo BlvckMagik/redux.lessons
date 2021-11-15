@@ -2,7 +2,6 @@ import './index.scss';
 import store from './store.js';
 import { addUser, deleteUser } from './users.actions.js';
 
-console.log(store.getState());
 store.subscribe(() => {
   console.log(store.getState());
 });
