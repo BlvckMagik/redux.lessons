@@ -11,7 +11,7 @@ export const addProduct = ({ id, name }) => {
   };
 };
 
-export const deleteProduct = id => {
+export const removeProduct = id => {
   return {
     type: DELETE_PRODUCT,
     payload: id,
