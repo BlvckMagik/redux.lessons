@@ -1,6 +1,6 @@
 import { ADD_USER, DELETE_USER } from './user.actions.js';
 
-const usersReducer = (state = null, action) => {
+const userReducer = (state = null, action) => {
   switch (action.type) {
     case ADD_USER: {
       return {
@@ -21,4 +21,4 @@ const usersReducer = (state = null, action) => {
   }
 };
 
-export default usersReducer;
+export default userReducer;
