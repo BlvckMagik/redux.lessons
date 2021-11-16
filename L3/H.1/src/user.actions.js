@@ -1,12 +1,10 @@
 export const ADD_USER = 'ADD_USER';
 export const DELETE_USER = 'DELETE_USER';
 
-export const setUser = name => {
+export const setUser = userData => {
   return {
     type: ADD_USER,
-    payload: {
-      name,
-    },
+    payload: userData,
   };
 };
 
