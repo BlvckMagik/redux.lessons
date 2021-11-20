@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { nextPage, prevPage } from './users.actions.js';
+import { nextPage, prevPage } from '../users.actions.js';
 import Pagination from './Pagination.jsx';
 import User from './User.jsx';
 
