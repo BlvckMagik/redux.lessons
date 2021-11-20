@@ -7,9 +7,9 @@ const Pagination = ({
   totalItems,
   itemsPerPage,
 }) => {
-  const isPrevPageAvailable = currentPage + 1 !== 1;
+  const isPrevPageAvailable = currentPage > 0;
   const isNextPageAvailable =
-    Math.ceil(totalItems / itemsPerPage) !== currentPage + 1;
+    currentPage < Math.ceil(totalItems / itemsPerPage) - 1;
 
   const prevButton = isPrevPageAvailable ? (
     <button className='btn' onClick={goPrev}>
