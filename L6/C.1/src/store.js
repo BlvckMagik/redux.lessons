@@ -10,11 +10,5 @@ const logger = store => next => action => {
   return result;
 };
 
-const store = createStore(
-  counterReduser,
-  compose(
-    applyMiddleware(logger),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
-);
+const store = createStore(counterReduser, applyMiddleware(logger));
 export default store;
