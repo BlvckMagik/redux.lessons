@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { getWeatherData } from './user.actions.js';
+import { getWeatherData } from './weather.actions.js';
 
 const UserInfo = ({ weatherData, getWeatherData }) => {
   useEffect(() => {
